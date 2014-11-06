@@ -1,4 +1,4 @@
-1. ** Conditional expression **
+1. ###### Conditional expression
 
   In haskell there is no conditional statement like Java etc. hence it has only conditional expressions.
   
@@ -10,7 +10,7 @@
   abs n = if n >= 0 then n else -n
   ```
 
-2. Guard statement
+2. ###### Guard statement
 
   Alternative way to define function definition starting with conditonal expression.
   
@@ -21,7 +21,7 @@
         | otherwise  = -n
   ```
 
-3. Pattern matching
+3. ###### Pattern matching
 
   eg:
   ```
