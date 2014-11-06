@@ -1,4 +1,4 @@
-1. Conditional expression
+1. ** Conditional expression **
 
   In haskell there is no conditional statement like Java etc. hence it has only conditional expressions.
   
