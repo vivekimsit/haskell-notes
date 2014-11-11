@@ -26,7 +26,7 @@
 3. ###### Pattern matching
 
   eg:
-  ```
+  ```hs
   not :: Bool -> Bool
   not False =  True
   not True = False
@@ -37,12 +37,11 @@
 
   ```hs
   add x y = x + y
-  
   add x y = \x -> (\y -> x + y)
   ```
   
   constant function
-  ```
+  ```hs
   const   :: a -> (b -> a)
   const x :: \_ -> x
   ```
