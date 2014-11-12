@@ -1,4 +1,6 @@
-### List are not arrays but linked list
+### List are not arrays but linked list, hence we can't index it like arrays.
+
+
 * Head
   * `head [1, 2, 3] = 1` 
 * Tail (Remove the first element)
@@ -28,25 +30,58 @@ Some collection types:
  * `x <- [1..5] ` is a generator because it contains the rule for generating the values one by one.
  * A list comprehension can have multiple generators.
  
-   Eg: `[(x,y) | x <- [1,2,3], y <- [4,5]]`
+   eg: `[(x,y) | x <- [1,2,3], y <- [4,5]]`
 
        `[(1, 4), (1,5), (2,4), (2,5), (3,5), (3,5)]`
        
  * Changing the order of generators changes the order of the element in the list.
+ * Guards
    
+   List comprehension use Guards to limit the values produced by generators.
+
+     eg: `[x | x <- [1..10], even x]` 
+  
+ * A string is a sequence of characters enclosed in double quotes. Internally they are represented as list of characters.
+ 
+   `['a', 'b', 'c'] :: [Char]`
+ 
  More example:
+ 
+ * concat
+
  ```hs
  concat :: [[a]] -> [a]
  concat xss = [x | xs <- xss, x <- xs]
  ```
- O/P
+
  ```hs
  > concat [[1,2,3], [4,5], [6]]
  [1,2,3,4,5,6]
  ```
+ 
+ * sorted
+ 
+ ```hs
+ sort :: Ord a => [a] -> Bool
+ sort xs =
+     and [x <= y | (x, y) <- pairs xs]
+ ```
 
-2. Guards
-  
-  List comprehension use Guards to limit the values produced by generators.
-
-  eg: `[x | x <- [1..10], even x]`
+ ```hs
+ > sorted [1, 2, 3, 4]
+ True
+ ```
+ 
+ * positions
+ 
+ ```hs
+ positions :: Eq a => a -> [a] -> [Int]
+ positions x xs =
+     [i | (x', i) <- zip xs [0..n], x == x']
+     where n = length xs - 1
+ ```
+ 
+ ```hs
+ > positions 0 [1, 0, 0, 1, 0, 1, 1, 0]
+ [0, 1, 2, 4, 7]
+ ```
