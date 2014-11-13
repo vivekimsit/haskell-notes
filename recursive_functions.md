@@ -1,4 +1,4 @@
-* Factorial
+1. Factorial
 
  **non-recursive**
   ```hs
@@ -28,7 +28,7 @@
   = 6
   ```
   
-* Length
+2. Length
 
  ```hs
  length        :: [a] -> Int
