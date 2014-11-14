@@ -44,3 +44,28 @@
  = 1 + 2
  = 3
  ```
+
+3. Quicksort
+  * The empty list is already sorted.
+  * Sort the tail values <= head and tail values > head.
+  
+  ```hs
+  qsort        :: [Int] -> [Int]
+  qsort []     = []
+  qsort (x:xs) =
+      qsort smaller ++ [x] ++ qsort larger
+      where
+          smaller = [a | a <- xs, a <= x]
+          larger  = [b | b <- xs, b > x]
+          
+          
+                              qsort [3,2,1,4,5]
+  
+                      qsort [2,1] ++ [3] ++ qsort [4,5]
+                  
+        qsort [1] ++ [2] ++ qsort [] ++ [3] ++ qsort [] ++ [4] ++ qsort [5]
+        
+                  [1] ++ [2] ++ [] ++ [3] ++ [] ++ [4] ++ [5]  
+                  
+                                  [1,2,3,4,5]
+  ```
