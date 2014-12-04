@@ -51,3 +51,14 @@
   3. `Ord` - Ordered types
   
     `(<) :: Ord a => a -> a -> Bool`
+
+Declaring Type and Type Classes
+===============================
+
+######Type Synonyms
+  
+  - `type String = [Char]`
+  - `type Pos = (Int, Int)`
+  - `type Pair a = (a, a)`
+  - `data Bool = True | False` (Analogy, Type extends Bool and Bool is a abstract base class)
+  - `data Answer = Yes | No | Unknown` User defines type
