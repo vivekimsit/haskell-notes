@@ -35,7 +35,7 @@ Some collection types:
        `[(1, 4), (1,5), (2,4), (2,5), (3,5), (3,5)]`
        
  * Changing the order of generators changes the order of the element in the list.
- * List comprehension use ** boolean guards ** ( `even x` ) to limit the values produced by generators.
+ * List comprehension use **boolean guards** ( `even x` ) to limit the values produced by generators.
 
      eg: `[x | x <- [1..10], even x]` 
   
