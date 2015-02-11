@@ -1,4 +1,13 @@
-<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+In haskell functions taks only one argument at a time.
+  eg:
+  ```hs
+  f 3 4 == (f 3) 4 --(f 3) is a function
+  f:: Num a => a -> a -> a
+  
+  g:: Num a => a -> a
+  g = f 3
+  g y = 3*3 + y*y <=> g = \y -> 3*3 + y*y
+  ```
 
 1. ###### Conditional expression
 
